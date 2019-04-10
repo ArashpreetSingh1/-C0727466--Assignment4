@@ -26,14 +26,19 @@ namespace Assignment4
             {
                 int counter = 0;
                 string ln;
-                while ((ln = file.ReadLine ()) != null)
+                while ((ln = file.ReadLine()) != null)
                 {
-                    while ((ln = file.ReadLine()) != null)
-                    {
-                        Console.W
-                    }
+                    Console.Writeline(ln);
+                    Beowulf.Add(ln);
                 }
+                file.Console();
+                Console.WriteLine($"File has {counter} lines.");
             }
+            }
+        public int FindNumberOfBlankSpace(string line)
+        {
+            //https://strackoverflow.com/questions/17812566/count-words-spaces-in-string-c-sharp
+        }
         }
     }
 }
