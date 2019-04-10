@@ -18,26 +18,36 @@ namespace Assignment4
             p.Beowulf = new ArrayList();
             p.ReadTextFiles();
         }
-        public void Run() { this.ReadTextFiles(); }
+        public void Run()
+        {
+            this.ReadTextFiles();
+        }
 
         public void ReadTextFiles()
         {
-           
+
             using (StreamReader file = new StreamReader(@"U:\Users\727466\beowulf.txt"))
             {
                 int counter = 0;
-                string ln;
-                while ((ln = file.ReadLine()) != null)
+                string delim = " ,. ";
+                string[] fields = null;
+                string line = null;
+                while (!file.EndOfStream)
                 {
-                    counter++;
+
+
+                    line = file.ReadLine();
+                    line.Trim();
+                    fields = line.Split(delim.ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
+                    counter += fields.Length;
                 }
                 file.Close();
-                Console.WriteLine($"File has {counter} lines. ");
+                Console.WriteLine($"The text file has {counter} words.");
             }
         }
         public int FindNumberOfBlankSpace(string line)
         {
-            
+
             int countletters = 0;
             int countSpaces = 0;
 
@@ -49,5 +59,6 @@ namespace Assignment4
             return countSpaces;
         }
     }
-
 }
+
+
