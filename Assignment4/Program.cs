@@ -32,7 +32,7 @@ namespace Assignment4
                     Beowulf.Add(ln);
                 }
                 file.Close();
-                Console.WriteLine($"File has {counter} lines.");
+                Console.WriteLine($"File has {counter} lines. ");
             }
             }
         public int FindNumberOfBlankSpace(string line)
