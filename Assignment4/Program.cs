@@ -29,20 +29,20 @@ namespace Assignment4
             using (StreamReader file = new StreamReader(@"U:\Users\727466\beowulf.txt"))
             {
                 int counter = 0;
-                string delim = " ,. ";
-                string[] fields = null;
-                string line = null;
-                while (!file.EndOfStream)
-                {
-
-
-                    line = file.ReadLine();
-                    line.Trim();
-                    fields = line.Split(delim.ToCharArray(), StringSplitOptions.RemoveEmptyEntries);
-                    counter += fields.Length;
+                int number = 0;
+                string line;
+                while ((line = file.ReadLine()) != null)
+                    {
+                    if(line.Contains("Sea") && line.Contains("Fare") || line.Contains("sea") && line.Contains("fare"))
+                    {
+                        int x = counter - 1;
+                        number++;
+                    }
+                    counter++;
                 }
+                Console.WriteLine($"The number of lines that contains *Sea* and *Fare* are {number}");
+                
                 file.Close();
-                Console.WriteLine($"The text file has {counter} words.");
             }
         }
         public int FindNumberOfBlankSpace(string line)
