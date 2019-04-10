@@ -14,7 +14,7 @@ namespace Assignment4
 
         static void Main(string[] args)
         {
-            Program p = new Program();
+            Program p =  new Program();
             p.Beowulf = new ArrayList();
             p.ReadTextFiles();
         }
